@@ -362,6 +362,10 @@ body.dark .search-field i{
     .searchBox{
         margin-right:90px;
     }
+    .name h1{
+        color: #000;
+    }
+    
     
 }
 

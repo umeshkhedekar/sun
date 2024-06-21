@@ -82,4 +82,9 @@ function showAlert() {
     document.getElementById("my").reset();
   }
 
- 
+  function showAlert() {
+    var emailValue = document.getElementById('inputEmail').value;
+    alert('Hello Wellcome to websiteplanet :: ' + emailValue);
+
+    document.getElementById("my").reset();
+  }
