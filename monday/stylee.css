@@ -975,5 +975,106 @@ body {
  }
 
  /*======== call reqeust=======*/
+ .box img{
+    width:50%;
+    height:600px;
+   }
+   .box{
+    margin-top: 100px;
+    display: flex;
+    background-color: #013f3f;
+    width: 90%;
+    margin-left: 50px;
+    color: #fff;
+    height:600px;
+   }
+   .box form h2{
+    margin-left:150px;
+   }
+   .box input{
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    background: none;
+    color: #fff;
+    border-color: #fff;
 
+   }
+   .box input::placeholder{
+    color: #d6d6d6;
+   }
+   .box form{
+    margin-left: 50px;
+    color: #fff;
+    
+   }
+   .box form span{
+    color: red;
+   }
+   #email{
+    max-width:300px;
+   }
+   .mb input{
+    width:426px;
+    text-align: center;
+   }
+   .box form button{
+    width:450px;
+    padding: 10px;
+    background-color: rgb(30, 233, 44);
+    border:none;
+   }
+   .box form button:hover{
+    
+    background-color: rgb(130, 230, 137);
+  
+   }
+   @media (max-width: 790px) {
+    .box img{
+      width:100%;
+      height:200px;
+     }
+     .box{
+      margin-top: 100px;
+      display: table;
+      background-color: #013f3f;
+      width:100%;
+      margin-left:0px;
+      height:900px;
+     }
+     .box form h2{
+      margin-left:50px;
+     }
+     .box input{
+      padding: 10px;
+      width:260px;
+      text-align: center;
+      background: none;
+      margin-top: 10px;
+     }
+     .box form{
+      margin-left: 30px;
+      width:300px;
+      margin-top:30px;
+     }
+     .box form span{
+      color: red;
+     }
+     
+     .mb input{
+      width:260px;
+      text-align: center;
+     }
+     .box form button{
+      width:260px;
+      padding: 10px;
+      background-color: rgb(30, 233, 44);
+      border:none;
+     }
+     .box form button:hover{
+      
+      background-color: rgb(130, 230, 137);
+    
+     }
+   }
  
