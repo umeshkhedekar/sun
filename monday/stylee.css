@@ -452,10 +452,8 @@ body.dark .name button:hover{
     padding: 8px;
     text-align: center;
     width:350px;
+    margin-left: 50px;
     
-    border-left: none;
-    border-right: none;
-    border-top: none;
     
 
 }
