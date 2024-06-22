@@ -100,22 +100,24 @@
 
   <div class="box">
      <img src="./img/freepik-export-20240621132821UCqs.jpeg">
-      <form  method="post" onsubmit="showAlert(); return false;"id="ds">
-        <h2>Call Me Back</h2><br><br>
-        <label>Name <span>*</span></label><br><br>
-        <input type="text" id="inputname"    placeholder="FirstName"  minlength="" maxlength="10" required>
-        <input type="text" id="inputname"      placeholder="LastName"  minlength="" maxlength="10" required><br><br>
-        <div class="mb">
-          <label>Email<span>*</span></label><br><br>
-          <input type="email" id="inputname" placeholder="Email" required>
-         </div><br><br>
-         <label>Contact<span>*</span></label><br><br>
-      <input type="tel" id="inputname" placeholder="Phone"  pattern="[0-9]{10}"  minlength="" maxlength="10"       required>
-      <input type="tel" placeholder="telephone">
-      <br><br>
-      <button type="submit">Submit</button>
+     <form  method="post" onsubmit="showAlert(); return false;"id="ds" class="was-validated">
+      <h2>Call Me Back</h2><br>
     
-      </form>
+      <label>Name <span>*</span></label><br>
+      <input type="text" id="inputname"  class="form-control" placeholder="FirstName"  pattern="^[A-Za-z\s]+$"  minlength="" maxlength="10" required>
+      <input type="text" id="inputname"  class="form-control"     placeholder="LastName"  pattern="^[A-Za-z\s]+$"   minlength="" maxlength="10" required><br>
+    
+      <div class="mb">
+        <label>Email<span>*</span></label><br>
+        <input type="email" id="inputname"  class="form-control"    placeholder="Email" required>
+       </div><br>
+       <label>Contact<span>*</span></label><br>
+    <input type="tel" id="inputname"     class="form-control" placeholder="Phone"  pattern="[0-9]{10}"  minlength="" maxlength="10"       required>
+    
+    <br><br>
+    <button type="submit">Submit</button>
+  
+    </form>
       
   </div>
 
