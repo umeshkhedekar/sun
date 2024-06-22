@@ -469,6 +469,10 @@ body.dark .name button:hover{
         width: 250px;
     }
 }
+.nav-links button a{
+    text-decoration:none;
+    color: #fff;
+}
 
 /*--====== About section =======--*/
 

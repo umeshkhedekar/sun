@@ -82,6 +82,20 @@ function showAlert() {
     document.getElementById("my").reset();
   }
 
- 
+ /*--=========== Login =======-- */
+ function validateLogin() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    // Basic validation (you should use a more secure method in a real application)
+    if (username === "umesh8080" && password === "umesh@8080") {
+        alert("Login successful!");
+
+        window.location.href = 'mo.html';
+    } else {
+        alert("Invalid username or password. Please try again.");
+    }
+    document.getElementById("loginForm").reset();
+}
 
   

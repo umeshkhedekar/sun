@@ -48,7 +48,7 @@
                 <li><a href="service.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                 Login
+                <a href="#">Login </a>
                   </button>
             </ul>
         </div>
@@ -85,7 +85,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form action="/submit-form" method="post" class="was-validated">
+            <form action="/submit-form" method="post" class="was-validated" id="loginForm">
                 <label for="username">Username:</label><br>
                 <input type="text" id="username" class="form-control" name="username"  pattern="^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9]{3,16}$"  required><br><br>
         
@@ -94,7 +94,7 @@
                
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="Submit" value="submit" class="btn btn-primary">Submit</button>
+                    <button type="Submit" value="submit" class="btn btn-primary" onclick="validateLogin()">Submit</button>
                   </div>
             </form>
         </div>
