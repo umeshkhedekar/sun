@@ -75,12 +75,22 @@ const typeEffect = () => {
 }
 typeEffect();
 
-function showAlert() {
-    var emailValue = document.getElementById('inputEmail').value;
-    alert('Hello Wellcome to Website Planet :: ' + emailValue);
+function handleSubmit(event) {
+    event.preventDefault(); // Prevent the form from submitting
+    var email = document.getElementById('AAA').value.trim();
+    
+    if (email === '') {
+        alert('Please enter your email address.');
+        return;
+    }
 
-    document.getElementById("my").reset();
-  }
+    // Display alert with submitted email
+    alert('Submitted successfully with email: ' + email);
+
+    // Reset the form after alert
+    document.getElementById('my').reset();
+}
+
 
  /*--=========== Login =======-- */
  function validateLogin() {
