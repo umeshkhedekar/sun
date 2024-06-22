@@ -101,7 +101,7 @@ function handleSubmit(event) {
     if (username === "umesh8080" && password === "umesh@8080") {
         alert("Login successful!");
 
-        window.location.href = 'mo.html';
+        window.location.href = 'Lopen.html';
     } else {
         alert("Invalid username or password. Please try again.");
     }

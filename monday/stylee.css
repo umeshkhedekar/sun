@@ -1041,5 +1041,61 @@ body {
      
    }
 
+   /*--======= Login open page ========--*/
+
+   .z{
+    text-align: center;
+    margin-top: 150px;
+ }
+ .z a{
+  text-decoration: none;
+  color: #fff;
+ }
+ .z-1{
+  border: 1px solid #000;
+  width: 200px;
+  padding:8px;
+  border-radius:10px;
+  margin-left:700px;
+  background-color: #30df35;
+  
+
+ }
+ .z-2{
+  border: 1px solid #000;
+  width: 200px;
+  padding:8px;
+  border-radius:10px;
+  margin-left:700px;
+  background-color: #30df35;
+  margin-top: 30px;
+ }
+ .z-3{
+  border: 1px solid #000;
+  width: 200px;
+  padding:8px;
+  border-radius:10px;
+  margin-left:700px;
+  background-color: #30df35;
+  margin-top: 30px;
+ }
+ #footerz{
+    margin-top:200px;
+  }
+ @media (max-width: 790px){
+  .z-1{
+    margin-left: 75px;
+  }
+  .z-2{
+    margin-left: 75px;
+  }
+  .z-3{
+    margin-left: 75px;
+  }
+  #footerz{
+    margin-top:200px;
+  }
+ }
+  
 
  
