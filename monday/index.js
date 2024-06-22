@@ -98,4 +98,12 @@ function showAlert() {
     document.getElementById("loginForm").reset();
 }
 
+ /*---------- call requst page --------*/
+
+ function showAlert() {
+    var emailValue = document.getElementById('inputname').value;
+    alert('Hello Wellcome to Website Planet :: '+ emailValue);
+
+    document.getElementById("ds").reset();
+  }
   

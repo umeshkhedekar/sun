@@ -70,33 +70,32 @@
   
          
     
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Login here</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form action="/submit-form" method="post">
-                  <label for="username">Username:</label><br>
-                  <input type="text" id="username" name="username" required><br><br>
-          
-                  <label for="password">Password:</label><br>
-                  <input type="password" id="password" name="password" required><br><br>
-                 
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="Submit" value="submit" class="btn btn-primary">Submit</button>
-                    </div>
-              </form>
-          </div>
-          
+   <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Login here</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+            <form action="/submit-form" method="post" class="was-validated" id="loginForm">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" class="form-control" name="username"  pattern="^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9]{3,16}$"  required><br><br>
+        
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" class="form-control" name="password"  pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{3,16}$"  required><br><br>
+               
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="Submit" value="submit" class="btn btn-primary" onclick="validateLogin()">Submit</button>
+                  </div>
+            </form>
+        </div>
+        
       </div>
     </div>
-
+  </div>
 
   <div class="box">
      <img src="./img/freepik-export-20240621132821UCqs.jpeg">
@@ -138,59 +137,5 @@
 
 </section>
 </body>
-<script>
-
-  const body = document.querySelector("body"),
-      nav = document.querySelector("nav"),
-      modeToggle = document.querySelector(".dark-light"),
-      searchToggle = document.querySelector(".searchToggle"),
-      sidebarOpen = document.querySelector(".sidebarOpen"),
-      siderbarClose = document.querySelector(".siderbarClose");
-
-      let getMode = localStorage.getItem("mode");
-          if(getMode && getMode === "dark-mode"){
-            body.classList.add("dark");
-          }
-
-// js code to toggle dark and light mode
-      modeToggle.addEventListener("click" , () =>{
-        modeToggle.classList.toggle("active");
-        body.classList.toggle("dark");
-
-        // js code to keep user selected mode even page refresh or file reopen
-        if(!body.classList.contains("dark")){
-            localStorage.setItem("mode" , "light-mode");
-        }else{
-            localStorage.setItem("mode" , "dark-mode");
-        }
-      });
-
-// js code to toggle search box
-        searchToggle.addEventListener("click" , () =>{
-        searchToggle.classList.toggle("active");
-      });
- 
-      
-//   js code to toggle sidebar
-sidebarOpen.addEventListener("click" , () =>{
-    nav.classList.add("active");
-});
-
-body.addEventListener("click" , e =>{
-    let clickedElm = e.target;
-
-    if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
-        nav.classList.remove("active");
-    }
-});
-
-  /*---------- call requst page --------*/
-
-  function showAlert() {
-    var emailValue = document.getElementById('inputname').value;
-    alert('Hello Wellcome to Website Planet :: '+ emailValue);
-
-    document.getElementById("ds").reset();
-  }
-</script>
+<script src="index.js"></script>
 </html>
