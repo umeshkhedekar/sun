@@ -1148,14 +1148,14 @@ body {
 }
 .s-4{
     display: flex;
-    margin-left: 300px;
+    margin-left:300px;
     text-align: center;
 }
 #age{
     width: 150px;
 }
 .s-5{
-    margin-left:40px;
+    margin-left:0px;
     display: flex;
 }
 .s-5 input{
@@ -1207,8 +1207,8 @@ body {
 
 @media (max-width: 790px){
     .s-1{
-      background-color: #093e47;
-      color: #fff;
+     background-color: #fff;
+      color: #000;
      margin-left: -20px;
      margin-top: -px;
     }
@@ -1218,8 +1218,8 @@ body {
         margin-left:50px;
         
     }
-    .s-2 input{
-        max-width: 265px;
+    .s-1 input{
+        width:280px;
     }
     .s-1 h2{
         margin-left: 100px;
@@ -1227,41 +1227,42 @@ body {
     .s-3{
         margin-left:50px;
         display:table;
+        margin-top: -10px;
     }
-    .s-3 input{
-        max-width:265px;
-    }
+    
     #mobile{
         margin-left:10px;
     }
     .s-4{
         display: table;
         margin-left:47px;
-        margin-top: -20px;
+        margin-top:-30px;
     }
-    .s-4 input{
-        max-width:265px;
-    }
+   
     .s-5{
-        margin-top:25px;
+        margin-top:20px;
         margin-left:0px;
+    }
+    .s-5 input{
+        width: 20px;
     }
     .s-6{
         margin-left:50px;
         display: table;
 
     }
-    .s-6 input{
-        max-width: 265px
+    .s-6 label{
+       margin-left:110px;
     }
+    
     .s-7 select{
         margin-top:15px;
         margin-left:0;
-        max-width: 265px;
+        max-width: 280px;
     }
     .s-8 select{
         margin-top: 15px;
-        max-width: 265px;
+        max-width: 280px;
     }
     .s-9{
         margin-left:60px;
@@ -1273,7 +1274,7 @@ body {
        
     }
     .s-9 button{
-        width: 265px;
+        width: 280px;
         margin-bottom:10px;
     }
 }

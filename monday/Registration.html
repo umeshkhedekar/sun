@@ -101,7 +101,7 @@
 <div class="s-1">
        <h2>Registration Form</h2>
    
-    <form class="was-validated">
+    <form class="was-validated" method="post" name="google-sheet" id="myForm">
         
       <div class="s-2">
         <label for="fname">First Name <span>*</span></label><br>
@@ -109,7 +109,6 @@
         <input type="text" id="mname" name="mname" class="form-control" placeholder="MiddleName"  required><br>
         <input type="text" id="lname" name="lname" class="form-control" placeholder="lastname" required><br>
        </div><br>
-       
        <div class="s-3">
         <label for="email">Email<span>*</span></label>
         <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" required><br>
@@ -121,16 +120,16 @@
         <label for="dob">Date of Birth:</label>
         <input type="date" id="dob" name="dob" class="form-control" required onchange="calculateAge()"><br><br>
         <input type="number" id="age" name="age" class="form-control" placeholder="Age" readonly>
-       
         <div class="s-5">
           <label>gender<span>*</span></label>
           <label for="gender-male">Male</label>
-          <input type="radio" id="gender-male" name="gender" value="male">
+          <input type="radio" id="gender-male" name="gender" value="male" required>
           <br>
           <label for="gender-female">Female</label>
-          <input type="radio" id="gender-female" name="gender" value="female">
+          <input type="radio" id="gender-female" name="gender" value="female" required>
         </div>
     </div><br>
+    
 
        <div class="s-6">
         <label>Address<span>*</span></label>
@@ -263,5 +262,104 @@
 
 </section>
 </body>
-<script src="index.js"></script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwueST8qJ3LSbibbo7Vg4RV1FvUME_VSDmbrFDmwgi4TnVVMfC-E50kaNfrg0ZzIRjT/exec'
+ const form = document.forms['google-sheet']
+
+ form.addEventListener('submit', e => {
+   e.preventDefault()
+   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+   alert("Form succefully")
+
+   document.getElementById("myForm").reset();
+ })
+
+
+ /*-- ======= registration page ---------*/
+
+ function calculateAge() {
+  const dob = new Date(document.getElementById('dob').value);
+  const today = new Date();
+  let age = today.getFullYear() - dob.getFullYear();
+  const monthDiff = today.getMonth() - dob.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+      age--;
+  }
+  document.getElementById('age').value = age;
+}
+
+function setTodayDate() {
+  const today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  const yyyy = today.getFullYear();
+  document.getElementById('today_date').value = yyyy + '-' + mm + '-' + dd;
+}
+
+
+/*------------------*/
+
+const body = document.querySelector("body"),
+      nav = document.querySelector("nav"),
+      modeToggle = document.querySelector(".dark-light"),
+      searchToggle = document.querySelector(".searchToggle"),
+      sidebarOpen = document.querySelector(".sidebarOpen"),
+      siderbarClose = document.querySelector(".siderbarClose");
+
+      let getMode = localStorage.getItem("mode");
+          if(getMode && getMode === "dark-mode"){
+            body.classList.add("dark");
+          }
+
+// js code to toggle dark and light mode
+      modeToggle.addEventListener("click" , () =>{
+        modeToggle.classList.toggle("active");
+        body.classList.toggle("dark");
+
+        // js code to keep user selected mode even page refresh or file reopen
+        if(!body.classList.contains("dark")){
+            localStorage.setItem("mode" , "light-mode");
+        }else{
+            localStorage.setItem("mode" , "dark-mode");
+        }
+      });
+
+// js code to toggle search box
+        searchToggle.addEventListener("click" , () =>{
+        searchToggle.classList.toggle("active");
+      });
+ 
+      
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click" , () =>{
+    nav.classList.add("active");
+});
+
+body.addEventListener("click" , e =>{
+    let clickedElm = e.target;
+
+    if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+        nav.classList.remove("active");
+    }
+});
+
+
+/*-------------------*/
+
+/*--=========== Login =======-- */
+function validateLogin() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  // Basic validation (you should use a more secure method in a real application)
+  if (username === "umesh8080" && password === "umesh@8080") {
+      alert("Login successful!");
+
+      window.location.href = 'Lopen.html';
+  } else {
+      alert("Invalid username or password. Please try again.");
+  }
+  document.getElementById("loginForm").reset();
+}
+</script>
 </html>
