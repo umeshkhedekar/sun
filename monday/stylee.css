@@ -1097,5 +1097,174 @@ body {
   }
  }
   
+ /*========-- Registration page =========*/
 
+ .s-1{
+    margin-top:120px;
+   background-color: #205656;
+    color: #fff;
+    margin-bottom: 150px;
+   
+  
+    
+ }
+ .s-1 span{
+    color: red;
+ }
+ .s-1 h2{
+    margin-left:550px;
+   
+ }
+
+ .s-1 form{
+    text-align:none;
+    margin-top: 50px;
+ }
+ .s-1 input{
+    max-width: 300px;
+    margin-left: 10px;
+    height: 40px;
+    text-align: center;
+ }
  
+.s-2{
+    margin-left: 300px;
+    display: flex;
+    text-align: center;
+}
+.s-3{
+    margin-left:350px;
+    display: flex;
+    text-align: center;
+}
+.s-3 input{
+    max-width: 350px;
+}
+#mobile{
+    margin-left:10px;
+}
+#mobile input{
+    width:0px;
+}
+.s-4{
+    display: flex;
+    margin-left: 300px;
+    text-align: center;
+}
+#age{
+    width: 150px;
+}
+.s-5{
+    margin-left:40px;
+    display: flex;
+}
+.s-5 input{
+    margin-top: -5px;
+    width: 20px;
+}
+.s-5 label{
+    margin-left: 10px;
+}
+.s-6{
+    margin-left:320px;
+    display: flex;
+   
+}
+.s-7{
+    margin-left:10px;
+    display: flex;
+}
+.s-7 select{
+    margin-left:10px;
+    width: 300px;
+    height: 40px;
+}
+.s-8{
+    margin-left: 10px;
+}
+.s-8 select{
+    height: 40px;
+}
+.s-9{
+    margin-left: 700px;
+    display: flex;
+}
+.reset{
+    background-color: red;
+}
+.submit{
+    background-color: #25d554;
+    margin-left: 25px;
+}
+.s-1 button{
+    color: #fff;
+    border: none;
+    padding: 8px;
+    width: 150px;
+    margin-top:30px;
+    margin-bottom:70px;
+}
+
+@media (max-width: 790px){
+    .s-1{
+      background-color: #fff;
+      color: #000;
+    }
+    .s-2{
+        display:table;
+        margin-left:50px;
+        
+    }
+    .s-1 h2{
+        margin-left: 100px;
+    }
+    .s-3{
+        margin-left:50px;
+        display:table;
+    }
+    #mobile{
+        margin-left:10px;
+    }
+    .s-4{
+        display: table;
+        margin-left:47px;
+        margin-top: -20px;
+    }
+    .s-4 input{
+        max-width:265px;
+    }
+    .s-5{
+        margin-top:25px;
+        margin-left:0px;
+    }
+    .s-6{
+        margin-left:50px;
+        display: table;
+
+    }
+    .s-6 input{
+        max-width: 265px
+    }
+    .s-7 select{
+        margin-top:15px;
+        margin-left:0;
+        max-width: 265px;
+    }
+    .s-8 select{
+        margin-top: 15px;
+        max-width: 265px;
+    }
+    .s-9{
+        margin-left:60px;
+        display:table;
+    }
+    .submit{
+        margin-left: 0;
+        margin-bottom:0px;
+       
+    }
+    .s-9 button{
+        width: 265px;
+        margin-bottom:10px;
+    }
+}
