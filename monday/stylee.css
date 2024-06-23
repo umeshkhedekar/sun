@@ -1212,10 +1212,14 @@ body {
      margin-left: -20px;
      margin-top: -px;
     }
+    
     .s-2{
         display:table;
         margin-left:50px;
         
+    }
+    .s-2 input{
+        max-width: 265px;
     }
     .s-1 h2{
         margin-left: 100px;
@@ -1223,6 +1227,9 @@ body {
     .s-3{
         margin-left:50px;
         display:table;
+    }
+    .s-3 input{
+        max-width: 265px;
     }
     #mobile{
         margin-left:10px;
