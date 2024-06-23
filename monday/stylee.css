@@ -1207,8 +1207,10 @@ body {
 
 @media (max-width: 790px){
     .s-1{
-      background-color: #fff;
-      color: #000;
+      background-color: #093e47;
+      color: #fff;
+     margin-left: -20px;
+     margin-top: -px;
     }
     .s-2{
         display:table;
