@@ -1138,7 +1138,7 @@ body {
     text-align: center;
 }
 .s-3 input{
-    max-width: 350px;
+    max-width: 300px;
 }
 #mobile{
     margin-left:10px;
@@ -1229,7 +1229,7 @@ body {
         display:table;
     }
     .s-3 input{
-        max-width: 265px;
+        max-width:265px;
     }
     #mobile{
         margin-left:10px;
