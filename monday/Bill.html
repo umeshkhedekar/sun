@@ -104,24 +104,35 @@
         <h1>Bill Form</h1>
         <div class="form-group">
             <label for="item">Item</label>
-            <input type="text" id="item" name="item">
+            <input type="text" id="item" name="Item" required>
         </div>
         <div class="form-group">
             <label for="quantity">Quantity</label>
-            <input type="number" id="quantity" name="quantity">
+            <input type="number" id="quantity" name="Quantity" required>
+          
         </div>
        
         <div class="form-group">
             <label for="price">Price</label>
-            <input type="number" id="price" name="price" step="0.01">
+            <input type="number" id="price" name="Price" step="0.01" required>
         </div>
         <div class="form-group">
             <label>Location</label>
-            <input  type="text" class="location"><br><br>
-            <input type="date" class="date" placeholder="Date"><br><br>
-            <input type="time" class="time" placeholder="Time">
+            <input  type="text"  id="Location" name="Location" required><br>
         </div>
-        <button type="submit" class="submit" onclick="addItem()">Add Item</button>
+        <div class="form-group">
+            <label>Date</label>
+            <input  type="date" name="Date" required><br>
+        </div>
+        <div class="form-group">
+            <label>Time</label>
+            <input  type="time" name="Time" required><br>
+        </div>
+
+       
+        
+        <button type="submit" class="submit" id="k">Submit</button><br>
+        <button type="button" onclick="addItem()">Add Item</button>
     </form>
     <div id="billDetails">
         <h2>Bill Details</h2>
@@ -145,7 +156,7 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
 
 
 
@@ -171,7 +182,7 @@
 /*------------------*/
 
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbxxwTMRFChgELnpB9v4at0YN9ukfIDmQhdB9CIScMeBIgcAsh0PFD7Ft1RBKuo8edaxdQ/exec'
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyyig7tfRJXMuCD60wGGSYMHUBBObwU1SCGSAnASnjQ5l0eDJEuSljwRF24PiYHzRkH/exec'
 const form = document.forms['google-sheet']
 
 form.addEventListener('submit', e => {
@@ -179,7 +190,7 @@ form.addEventListener('submit', e => {
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
   alert("Form succefully")
 
-  document.getElementById("billForm").reset();
+  document.getElementById("").reset();
 })
 
 
@@ -297,16 +308,34 @@ function downloadPDF() {
     doc.text(`Date: ${document.getElementById('date').textContent}`, 20, 30);
 
     const table = document.getElementById('billTable');
-    const rows = table.getElementsByTagName('tbody')[0].rows;
+    const headers = [];
+    const rows = [];
 
-    let y = 40;
-    for (let i = 0; i < rows.length; i++) {
-        const cells = rows[i].cells;
-        doc.text(`Item: ${cells[0].textContent}, Quantity: ${cells[1].textContent}, Price: ${cells[2].textContent}, Total: ${cells[3].textContent}`, 20, y);
-        y += 10;
+    // Get table headers
+    const ths = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0].cells;
+    for (let i = 0; i < ths.length; i++) {
+        headers.push(ths[i].textContent);
     }
 
-    doc.text(`Grand Total: $${document.getElementById('grandTotal').textContent}`, 20, y + 10);
+    // Get table rows
+    const trs = table.getElementsByTagName('tbody')[0].rows;
+    for (let i = 0; i < trs.length; i++) {
+        const cells = trs[i].cells;
+        const row = [];
+        for (let j = 0; j < cells.length; j++) {
+            row.push(cells[j].textContent);
+        }
+        rows.push(row);
+    }
+
+    // Add table to PDF
+    doc.autoTable({
+        head: [headers],
+        body: rows,
+        startY: 40
+    });
+
+    doc.text(`Grand Total: $${document.getElementById('grandTotal').textContent}`, 20, doc.autoTable.previous.finalY + 10);
 
     doc.save('bill.pdf');
 }
@@ -314,5 +343,6 @@ function downloadPDF() {
 // Initialize the date and time display
 updateDateTime();
 setInterval(updateDateTime, 1000);
+
 </script>
 </html>

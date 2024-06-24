@@ -109,9 +109,77 @@ th {
     }
 }
 
+/*---------------------*
+
+let grandTotal = 0;
+
+// Display the current date and time
+function updateDateTime() {
+    const now = new Date();
+    const dateStr = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
+    document.getElementById('date').textContent = dateStr;
+}
+
+function addItem() {
+    const item = document.getElementById('item').value;
+    const quantity = parseFloat(document.getElementById('quantity').value);
+    const price = parseFloat(document.getElementById('price').value);
+
+    if (item && quantity > 0 && price > 0) {
+        const total = quantity * price;
+
+        const table = document.getElementById('billTable').getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+        const cell4 = newRow.insertCell(3);
+
+        cell1.textContent = item;
+        cell2.textContent = quantity;
+        cell3.textContent = price.toFixed(2);
+        cell4.textContent = total.toFixed(2);
+
+        grandTotal += total;
+        document.getElementById('grandTotal').textContent = grandTotal.toFixed(2);
+
+        document.getElementById('billForm').reset();
+    } else {
+        alert('Please enter valid item, quantity, and price.');
+    }
+}
+
+function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    doc.text("Bill Details", 20, 20);
+    doc.text(`Date: ${document.getElementById('date').textContent}`, 20, 30);
+
+    const table = document.getElementById('billTable');
+    const rows = table.getElementsByTagName('tbody')[0].rows;
+
+    let y = 40;
+    for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].cells;
+        doc.text(`Item: ${cells[0].textContent}, Quantity: ${cells[1].textContent}, Price: ${cells[2].textContent}, Total: ${cells[3].textContent}`, 20, y);
+        y += 10;
+    }
+
+    doc.text(`Grand Total: $${document.getElementById('grandTotal').textContent}`, 20, y + 10);
+
+    doc.save('bill.pdf');
+}
+
+// Initialize the date and time display
+updateDateTime();
+setInterval(updateDateTime, 1000);
 
 
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
 
 
