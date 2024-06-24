@@ -1282,3 +1282,122 @@ body {
         margin-bottom:10px;
     }
 }
+
+/*--- ============== bill page create ============---*/
+
+.containem {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 100px;
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+ .containem form {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    margin-top: 0px;
+    width:70%;
+   
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 80%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.containem button {
+    display: block;
+    width: 80%;
+    background: #5cb85c;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4cae4c;
+}
+
+#billDetails {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    margin-top:70px;
+    width:50%;
+   
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #f4f4f4;
+}
+@media (max-width: 790px){
+    .containem{
+        display: table;
+        width:90%;
+    }
+    .containem form {
+        background: #fff;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+       
+        width:100%;
+    }
+   
+     #billDetails {
+        background: #fff;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        margin-top:0;
+        width:100%;
+        
+    }
+    .form-group input {
+        width:100%;
+        
+    }
+    
+    .containem button {
+       width: 100%;
+    }
+}
+
