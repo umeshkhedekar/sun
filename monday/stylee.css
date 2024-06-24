@@ -775,9 +775,10 @@ body.dark .aaa{
     display: flex;
     margin-top: 70px;
     height: 250px;
-    background-color: #c5f6b3;
-    margin-left: 80px;
-    margin-right: 80px;
+    background-color:#c5f6b3;
+    
+    margin-left: 50px;
+    margin-right: 50px;
    
 }
 #subscribe form{
@@ -787,6 +788,7 @@ body.dark .aaa{
 .mn{
    margin-left: 300px;
    margin-top: 60px;
+  
 }  
 .mn p{
     font-size: 20px;
@@ -1112,7 +1114,8 @@ body {
     color: red;
  }
  .s-1 h2{
-    margin-left:550px;
+    margin-left:650px;
+    color: #FFf;
    
  }
 
@@ -1223,6 +1226,7 @@ body {
     }
     .s-1 h2{
         margin-left: 100px;
+        color: #000;
     }
     .s-3{
         margin-left:50px;
