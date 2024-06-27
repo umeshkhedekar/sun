@@ -39,9 +39,7 @@ body{
     margin-top: 200px;
     opacity:10;
 }
-.name{
-  
-}
+
 
 body.dark{
     --body-color: #18191A;
@@ -88,6 +86,8 @@ nav .nav-bar .sidebarOpen{
     display: none;
  
 }
+
+
 
 nav .nav-bar .logo a{
     font-size: 25px;
@@ -267,11 +267,13 @@ body.dark .search-field i{
     color: var(--orange-color);
 }
 
+
 @media (max-width: 790px) {
     nav .nav-bar .sidebarOpen{
         display: block;
     }
-
+    
+ 
     .menu{
         position: fixed;
         height: 100%;
@@ -452,7 +454,7 @@ body.dark .name button:hover{
     padding: 8px;
     text-align: center;
     width:350px;
-    margin-left: 50px;
+    margin-left: 25px
     
     
 
@@ -467,6 +469,9 @@ body.dark .name button:hover{
     }
     .modal-body form input{
         width: 250px;
+    }
+    .nav-links button{
+        margin-top:20px;
     }
 }
 .nav-links button a{
@@ -563,6 +568,7 @@ body.dark .aaa{
     text-decoration: none;
     color: #fff;
     padding: 10px;
+   
 }
 .first span{
     margin-left:10px;
@@ -593,6 +599,7 @@ body.dark .aaa{
 }
 .second{
     margin-left:40px;
+   
 }
 .three i{
     border:1px solid #fbf8f8;
@@ -624,7 +631,7 @@ body.dark .aaa{
         width:300px;
         height: 200px;
         background-size:cover;
-        margin-top:30px;
+        margin-top:56px;
         text-align: center;
        z-index: 100;
     }
@@ -679,7 +686,7 @@ body.dark .aaa{
         padding:15px;
         font-size: 15px;
         border-radius:25px;
-       
+        width: 250px;
         
     }
     .first a{
@@ -697,7 +704,7 @@ body.dark .aaa{
        
     }
     .first{
-        margin-left:40px;
+        margin-left:30px;
         margin-top: -20px;
     }
     
@@ -710,7 +717,7 @@ body.dark .aaa{
         border-radius:25px;
         margin-top:30px;
        margin-right:0;
-        
+       width: 250px;
     }
     .second a{
         text-decoration: none;
@@ -726,7 +733,7 @@ body.dark .aaa{
         color: #000;
     }
     .second{
-        margin-left:40px;
+        margin-left:30px;
     }
     .three i{
         border:1px solid #fbf8f8;
@@ -736,6 +743,7 @@ body.dark .aaa{
         font-size: 15px;
         border-radius:25px;
         margin-top: 30px;
+        width: 250px;
     }
     .three a{
         text-decoration: none;
@@ -749,7 +757,7 @@ body.dark .aaa{
         color: #000;
     }
     .three{
-        margin-left:40px;
+        margin-left:30px;
     }
     .home{
         background-color: #fff;
@@ -1114,7 +1122,7 @@ body {
     color: red;
  }
  .s-1 h2{
-    margin-left:650px;
+    margin-left:50px;
     color: #FFf;
    
  }
@@ -1225,7 +1233,7 @@ body {
         width:280px;
     }
     .s-1 h2{
-        margin-left: 100px;
+        margin-left: 10px;
         color: #000;
     }
     .s-3{
